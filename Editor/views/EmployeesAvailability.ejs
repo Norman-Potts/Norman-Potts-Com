@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="<%- route %>react/react.js"></script>
+<script src="<%- route %>react/react-dom.js"></script>
+<script src="<%- route %>react/bable.js"></script>
+ 
+
+<link href="<%- route %>css/Global_Styles.css" rel="stylesheet" type="text/css"/> 		
+<link href ="<%- route %>css/Editor_Styles.css" rel="stylesheet" type="text/css"/>
+<link href ="<%- route %>css/EmployeeAvailability_Styles.css" rel="stylesheet" type="text/css"/> 		
+
+<script type = "text/babel" src="<%- route %>js/ChangeEmployeesAvailability.js"> </script> 
+<script type = "text/babel">					
+	var BASE_URL  = "<%- route %>";	
+	var EMPLOYEE_ARR  = JSON.parse( '<%- DEFAULT_EMPLOYEE_ARR %>');	
+	RunJS(  BASE_URL, EMPLOYEE_ARR );		
+	
+</script>
+</head>
+<body>		
+	<div id = "EditorAppContainer">	 
+		<div id = "TopBlock">			
+			<div id = "BlockLeft">
+				<a href ="<%- route %>Editor/"><button class = "myNavLinks" >Menu</button></a>
+			</div>
+			<h1> Employee Availability </h1> 	
+			<div id = "BlockLeft">
+				<p> Logged in as: <%- Firstname %> <%- Lastname %>. </p>
+				<a href ="<%- route %>Logout/"><button class = "myNavLinks" >Logout</button></a>
+			</div>
+		</div>
+		<div id = "SetAvailabilityApp"></div>
+		
+	</div>
+</body>
+</html>

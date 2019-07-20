@@ -1,0 +1,43 @@
+/* Global Styles */
+/* Common accross app */
+/* Styles written as one lines. */
+select { font-family:"Arial", "Helvetica", "Comic Sans MS", "Comic Sans"; }
+textarea { font-family: "Arial", "Helvetica", "Comic Sans MS", "Comic Sans"; font-weight: bold; font-size: 1.5em; }
+pre { display: block; font-family: "Arial", "Helvetica", "Comic Sans MS", "Comic Sans"; white-space: wrap;	margin: 1em 0;}
+.TextCenter { text-align: center; }
+.Bold { font-weight: bold; } .bold { font-weight: bold; }
+.italics { font-style: italic; }
+.hidden { display: none; }	
+.vhide{ visibility: hidden; }
+#authorshipV2 { background: white; border: 5px solid black;	float: right; display: block;	padding: 0.5em;	 }		
+.FloatRight { float: right; }
+#CenterBox { background-color: rgb(153,217,234);	display: inline-block; overflow: hidden; border: 5px solid black; position: relative; width: 93%; min-height: 70vh; margin-top: 0; margin-left: 2%;	 padding-top: 2vh; padding-bottom: 2vh; padding-left: 1vw; padding-right: 1vw; }			
+#EditButton { text-align: center;	 border: 5px solid black; height: 60px; width: 60px; border-radius: 50%; padding: 3px; display: inline-block; font-size: 0.7em; margin: 0; background: cyan; }		
+#EditButton p { text-decoration: underline; }
+#EditButton:hover, #EditButton:focus { background: rgb(0,157,141); }				
+#logoutButton { margin: 0% 0% 0% 0%; padding: 3px; display:  inline-block; float: right; border-radius: 50%; border: 5px solid black; height: 60px; width: 60px; font-size: 0.7em; background: lime; }
+#logoutButton p { text-align: center; vertical-align: middle; overflow: hidden; text-decoration: underline; }
+#logoutButton:hover, #logoutButton:focus { background: green; }
+.OneEm { margin-bottom: 1em; }
+#close { color: black; background: white; float: right; display: block;	font-size: 30px; font-weight: bold; text-align: center; line-height: 1em; border: 1px solid black; padding: 0; margin: 0; position: relative;	 }
+#close:hover, #close:focus { background: red; color: black; text-decoration: none; cursor: pointer; cursor: hand;  }
+.Underline{ text-decoration: underline;	 }	
+.modal { display: block; position: fixed;  left: 0; top: 0; width: 100%;  height: 100%;  background-color: rgb(0,0,0); background-color: rgba(0,0,0,0.6);  z-index: 1; }
+#ModalContent { z-index: 1; background-color: rgb(195,195,195); margin-top: 10%; margin-left: 10%; margin-right: 10%; margin-bottom: 10%; border: 3px solid black; overflow: hidden; display: block; padding-left: 2em;	padding-bottom: 1em; }
+.LifeguardShift { background: rgb(237,28,36); }	
+.HeadGuardShift { background: rgb(127,127,127); }	
+.InstructorShift { background: rgb(0, 162, 232); }	
+.SupervisorShift { background: rgb(218,112,214); }	
+.Lifeguard { background: rgb(237,28,36); }	
+.Headguard { background: rgb(127,127,127); }	
+.Instructor { background: rgb(0, 162, 232); }	
+.Supervisor { background: rgb(218,112,214); }			
+
+#Lifeguard { background: rgb(237,28,36); }	
+#Headguard { background: rgb(127,127,127); }	
+#Instructor { background: rgb(0, 162, 232); }	
+#Supervisor { background: rgb(218,112,214); }	
+
+#SshiftID { display: none; }	
+.twoEmLeft { margin-left: 2em; }
+/* End of Global Styles */		

@@ -1,0 +1,20 @@
+/* All Styles for common for editor app side, not daily view side, not speciffically crud styles. */ /*background-color: rgb(153,217,234);*/
+body { background-color: rgb(63,72,204); color: black; font-family: "Arial", "Helvetica", "Comic Sans MS", "Comic Sans"; text-align: center; }
+#EditorAppContainer { padding: 1em; display: block; margin-top: 10vh; margin-left: 1em; margin-right: 1em; margin-bottom: 5vh; max-width: 90vw; background-color: rgb(153,217,234); border: 5px solid black; border-radius: 3em; display: inline-block; }
+.myNavLinks { border: 1px solid navy; padding: 1em; text-align: center; background-color: white; cursor: pointer; cursor: hand; color: navy; }
+#ManageEmployeesNav { display: inline-block; float: left; padding-left: 1em; border: 1px solid black; }	
+#TopBlock  button:hover, #TopBlock  button:focus   { background-color: rgb(190, 146, 209); color: black; cursor: pointer; cursor: hand; }
+#TopBlock { border-bottom: 1px solid navy; text-align: center; list-style-type: none; overflow: hidden; margin: 0 0 1em 0; }
+#TopBlock h1 { display: inline-block; margin-left: 2em; margin-right: 2em; }
+#TopBlock p { padding: 0; margin: 0; }		
+#TopBlock button { border: 1px solid navy; text-align: center; background-color: white; cursor: pointer; cursor: hand; color: navy; }
+#TopBlock a { text-decoration: none; }
+#BlockLeft {display: inline-block;}
+
+
+
+.CertSelected {
+	font-weight: bold;
+	font-size: 1.15em;	
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);	
+}

@@ -1,0 +1,4 @@
+/* Styles unique to menu*/
+#NavColumn { display: inline-block; float: left; padding-left: 1em; list-style-type: none; }	
+#NavColumn a { text-decoration: none; }
+#NavColumn  button:hover, #NavColumn  button:focus,  #NavColumn  li:hover, #NavColumn  li:focus   { background-color: rgb(190, 146, 209); color: black; cursor: pointer; cursor: hand; }

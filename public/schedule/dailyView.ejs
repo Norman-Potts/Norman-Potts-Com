@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link href="css/Global_Styles.css" rel="stylesheet" type="text/css"/> 		
+<link href="css/DailyView_Styles.css" rel="stylesheet" type="text/css"/> 		
+<link href = "css/DisplaySchedule_Styles.css" rel="stylesheet" type="text/css"/>
+
+<script src="react/react.js"></script>
+<script src="react/react-dom.js"></script>
+<script src="react/bable.js"></script>
+ 
+
+
+<script type = "text/babel" src="js/scheduleApp.js"> </script> 
+<script type = "text/babel">		
+	var ParB  = "<%- route  %>";       
+	var ParC  = "<%- displayDate %>";    //"2018-October-30"; /// Set up tpl var.
+	var ParD  = "<%- YYYYMMDD %>";       //"2018-10-30"; /// Set up tpl var.
+	var ParE  = []; /// Will hold array of employees and their shifts
+	var ParF  = 0; /// not used in this implementation.
+	var ParG = 0;	/// Not used in this implementation.
+	try {
+		/// set up tpl var.
+		ParE  = JSON.parse(  '<%-shiftArrayForToday %>'  );
+	}catch(e)
+	{
+		alert("Schedule and Employee data could not be initialized.")
+	}	
+	/// Can put in try catch error handling here for when page doesnt have correct inital loading values. 	
+	RunJS(   ParB, ParC, ParD, ParE, ParF, ParG );	
+</script>
+</head>
+<body>
+	<h1>Schedule</h1>
+	<div id ="SchedulePage">		 
+	 <div id ="ScheduleApp"> 
+	 </div>		 
+	</div>		
+	<!-- 
+	<h1>Earl Haig Schedule</h1> 
+	<div id ="SchedulePage">		 
+	 <div id ="Earl_Haig_ScheduleApp"> 
+	 </div>		 
+	</div>			
+	<h1>Woodman Schedule</h1>
+	<div id ="SchedulePage">		 
+	 <div id ="Woodman_ScheduleApp"> 
+	 </div>		 
+	</div>		
+	-->
+</body>
+</html>

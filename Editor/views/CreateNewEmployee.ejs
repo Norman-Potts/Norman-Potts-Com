@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+<link href="<%- route %>css/Global_Styles.css" rel="stylesheet" type="text/css"/> 		
+<link href ="<%- route %>css/Editor_Styles.css" rel="stylesheet" type="text/css"/>
+<link href ="<%- route %>css/CreateNewEmployee_Styles.css" rel="stylesheet" type="text/css"/> 		
+	
+ 
+</head>
+<body>			
+	<div id = "EditorAppContainer">
+		<div id = "TopBlock">			
+			<div id = "BlockLeft">
+				<a href ="<%- route %>Editor/"><button class = "myNavLinks" >Menu</button></a>
+			</div>
+			<h1> Create New Employee Form </h1> 	
+			<div id = "BlockLeft">
+				<p> Logged in as: <%- Firstname %> <%- Lastname %>. </p>
+				<a href ="<%- route %>Logout/"><button class = "myNavLinks" >Logout</button></a>
+			</div>
+		</div>
+		
+		<form onsubmit = "return ValidateEmployeeForm(event);" accept-charset = "utf-8" id = "CreateEmployeeForm" name = "CreateEmployeeForm"  >							
+			<h4> Enter in firstname and lastname. Letters only, no symbols.  </h4>
+			<div class="form-group">
+				<label For = "Firstname"> <strong> Firstname: </strong> </label>
+				<input type = "textbox"  id= "Firstname" name="Firstname"    value = ""   maxlength="21" autofocus/> 		
+				<% if (FirstnameError != 0) { %>
+					<div id = "FirstnameError" > <%- FirstnameError %></div>
+				<% } %>						
+			</div>
+			<div class="form-group">
+				<label For = "Lastname"><strong> Lastname: </strong> </label>			
+				<input type = "textbox" id = "Lastname" name = "Lastname"   value = ""    maxlength="21"  />  
+				<% if (LastnameError != 0) { %>
+					<div id = "LastnameError" > <%- LastnameError %></div>
+				<% } %>						
+			</div>
+			
+			
+			
+			<% if (NoCertificationError != 0) { %>
+			<div id = "CertificationError" > <%- NoCertificationError %></div>
+			<% } %>		
+			
+			
+			
+			<div id = "certsGroup"> 
+			 <h4> Select at least one role this employee will have.  </h4>
+			 <button  class  ="Lifeguard"  name="Cert" value = "1" id = "Lifeguard"  >  <span> &#9744 </span>  Lifeguard </button> 
+			 <button  class  ="Instructor" name="Cert" value = "2" id = "Instructor" >   <span> &#9744 </span>   Instructor </button>	
+			 <button  class  ="Headguard"   name="Cert" value = "3" id = "Headguard"  >  <span> &#9744 </span>   Headguard </button>	
+			 <button  class  ="Supervisor"  name="Cert" value = "4" id = "Supervisor" >   <span> &#9744 </span>  Supervisor </button>
+			</div>		
+	
+			<h4>
+				Availability can be set on "Change Availability" page after the employee has been created.
+			</h4>
+			<input type = "submit" value = "Create Employee" id = "CreateEmpButton" />
+			
+		</form>
+		
+		<div id = "feedback" > </div>
+		
+		
+	</div>
+</body>
+<script type = "text/javascript">		
+		
+	var ParA  = "<%- route %>";	
+	
+	var selectedCert = [];
+	var Firstname = "";
+	var Lastname = "";
+	
+	var btnLifeguard  = document.getElementById("Lifeguard");
+	var btnInstructor = document.getElementById("Instructor");
+	var btnHeadguard  = document.getElementById("Headguard");
+	var btnSupervisor = document.getElementById("Supervisor");
+		
+	var checkedSymbol = " &#9745 ";
+	var unCheckedSymbol = " &#9744 ";
+	var Submitdisable = false;
+
+
+	/// When lifeguard button gets clicked...
+	btnLifeguard.addEventListener("click", function(event) {
+		event.preventDefault();  event.stopPropagation(); var value = event.currentTarget.value;
+		console.log( "Lifeguard value:"+ value);
+ 
+		if ( selectedCert.includes( value ) ) {
+			
+			var i = selectedCert.indexOf( value );		
+			selectedCert.splice( i, 1 );	
+			btnLifeguard.classList.remove("CertSelected");
+			btnLifeguard.firstElementChild.innerHTML = unCheckedSymbol;
+		}
+		else {
+			selectedCert.push( value );					
+			btnLifeguard.setAttribute("class", "CertSelected");
+			btnLifeguard.firstElementChild.innerHTML = checkedSymbol;
+		}
+	 
+	});
+	
+	
+	/// When Instructor button gets clicked...
+	btnInstructor.addEventListener("click", function(event) {
+		event.preventDefault();  event.stopPropagation(); var value = event.currentTarget.value;
+		console.log( "Instructor value:"+ value);		 
+		if ( selectedCert.includes( value ) ) {
+			var i = selectedCert.indexOf( value );		
+			selectedCert.splice( i, 1 );	
+			btnInstructor.classList.remove("CertSelected");
+			btnInstructor.firstElementChild.innerHTML = unCheckedSymbol;
+		}
+		else {
+			selectedCert.push( value );					
+			btnInstructor.setAttribute("class", "CertSelected");
+			btnInstructor.firstElementChild.innerHTML = checkedSymbol;
+		}
+	 
+	});
+	
+	/// When Headguard button gets clicked...
+	btnHeadguard.addEventListener("click", function(event) {
+		event.preventDefault();  event.stopPropagation(); var value = event.currentTarget.value;
+		console.log( "Headguard value:"+ value);
+
+		if ( selectedCert.includes( value ) ) {
+			var i = selectedCert.indexOf( value );		
+			selectedCert.splice( i, 1 );	
+			btnHeadguard.classList.remove("CertSelected");
+			btnHeadguard.firstElementChild.innerHTML = unCheckedSymbol;
+		}
+		else {
+			selectedCert.push( value );					
+			btnHeadguard.setAttribute("class", "CertSelected");
+			btnHeadguard.firstElementChild.innerHTML = checkedSymbol;
+		}
+ 
+
+	});
+	
+	
+	/// When Supervisor button gets clicked...
+	btnSupervisor.addEventListener("click", function(event) {
+		event.preventDefault();  event.stopPropagation(); var value = event.currentTarget.value;
+		console.log( "Supervisor value:"+ value);
+		 		 
+		if ( selectedCert.includes( value ) )
+		{
+			var i = selectedCert.indexOf( value );		
+			selectedCert.splice( i, 1 );	
+			btnSupervisor.classList.remove("CertSelected");
+			btnSupervisor.firstElementChild.innerHTML = unCheckedSymbol;
+		}
+		else {
+			selectedCert.push( value );					
+			btnSupervisor.setAttribute("class", "CertSelected");
+			btnSupervisor.firstElementChild.innerHTML = checkedSymbol;
+		}
+		 
+	});
+	
+	
+	var txtFirstname = document.getElementById("Firstname");
+	var txtLastname = document.getElementById("Lastname");
+	
+	
+	function removeAndCapitalize( value, context ) {				
+		if (value.length > 0 ) {			
+			var result = value.replace( /[^A-Za-z]/g, "" );
+			var R = "";
+			if (result.length > 0 ) {										
+				result = result.toLowerCase();		
+				var R = result.charAt(0).toUpperCase()+result.slice(1); 
+				result = R;				
+			}			
+			context.value = result;			
+		}	
+	}
+	
+	txtFirstname.addEventListener("input", function(event) {		
+		var value = event.target.value;
+		console.log(value);
+		removeAndCapitalize(value, this);
+		
+	});
+	txtLastname.addEventListener("input", function(event) {		
+		var value = event.target.value;	 
+		console.log(value);
+		removeAndCapitalize(value, this);	
+	});
+	
+			
+	function ValidateEmployeeForm( event ) {
+		event.preventDefault();
+		var pass = false;
+		if(Submitdisable = true) {
+			console.log( selectedCert );		
+			var F, La, Li, I, H, S; 
+			function Fix(v) {			
+				var result = v.replace( /[^A-Za-z]/g, "" );
+				var R = "";
+				if (result.length > 0 ) {										
+					result = result.toLowerCase();		
+					var R = result.charAt(0).toUpperCase()+result.slice(1); 
+					result = R;				
+				}			
+				console.log("Final cleaning "+result);
+				return result;			
+			}		
+			F = Fix( txtFirstname.value );
+			La = Fix( txtLastname.value );		
+			if( F.length > 0 && La.length > 0 && selectedCert.length > 0) {		
+				Li = ( selectedCert.includes("1")) ? "Yes" : "No";
+				I = ( selectedCert.includes("2") ) ? "Yes" : "No";
+				H = ( selectedCert.includes("3") ) ? "Yes" : "No";
+				S = ( selectedCert.includes("4") ) ? "Yes" : "No";				
+				var msg = " Are you sure you wish to create this user acount?  \n Firstname: "+F+"\n Lastname: "+La+"\n \n Certifcations \n        Lifeguard: "+Li+" \n        Instructor: "+I+"\n        Headguard: "+H+"\n        Supervisor: "+S+"" ;		
+				if (confirm(msg)) {							
+					var inputarr = {};		
+					inputarr['Firstname'] = F;
+					inputarr['Lastname'] = La;
+					inputarr['CertArr'] = selectedCert;							
+					var jsonItem = JSON.stringify( inputarr );
+					var destination = "<%- route %>Editor/doCreateEmployee";	
+					try {
+						var http = new XMLHttpRequest();						 //// at try to create employee
+						http.onreadystatechange = function() {	
+							
+							console.log("http.status "+http.status);
+							if (http.readyState == 4 && http.status == 200) {
+								var data = http.responseText;																			
+								console.log(data);
+								if (data[0] == '<') { 
+									/// Have to redirect
+									window.location.replace(ParA+"/Editor/");
+								}else {		
+									var instructions = JSON.parse(data);	
+									var FeedBack = document.getElementById("feedback");										
+									var compError = (instructions.includes(4)) ? true : false; 								
+									var Mistake = true;
+									if ( instructions.includes(0) == true || instructions.includes(1) || instructions.includes(2) )
+									{ Mistake = true; }
+									else
+									{ Mistake = false; }
+									
+									if(Mistake == false &&  compError == false  && instructions.includes(6) == false) {					
+										if( instructions.includes(5) ) { //// was successful...																			
+											var successMSG = "<p class = \"success\"><Strong> Employee was successfully created.</Strong> <br />";
+											successMSG += " Firstname: <Strong> "+F+" </Strong> <br />";
+											successMSG += " Lastname: <Strong> "+La+" </Strong><br />";								
+											successMSG += "<br /> <Strong> Certifcations </Strong><br />      Lifeguard:  <Strong>"+Li+"</Strong> <br />       Instructor: <Strong>"+I+"</Strong><br />       Headguard: <Strong>"+H+"</Strong><br />        Supervisor: <Strong>"+S+"</Strong></p>" ;
+											FeedBack.innerHTML = successMSG;										
+											btnLifeguard.classList.remove("CertSelected");
+											btnInstructor.classList.remove("CertSelected"); 
+											btnHeadguard.classList.remove("CertSelected");  
+											btnSupervisor.classList.remove("CertSelected"); 																		
+											btnLifeguard.firstElementChild.innerHTML = unCheckedSymbol;
+											btnInstructor.firstElementChild.innerHTML = unCheckedSymbol;
+											btnHeadguard.firstElementChild.innerHTML = unCheckedSymbol;
+											btnSupervisor.firstElementChild.innerHTML = unCheckedSymbol;
+											selectedCert = [];
+											txtFirstname.value = "";
+											txtLastname.value = "";										
+										}								
+									} else {
+										/// Was unsuccesful.
+										if(Mistake == true) {  ////  Dont clear form. Create a yellow div below.										
+											var mistakeMsg = "<p class = \"warning\"> The employee was not submitted. <br />";
+											if ( instructions.includes(0) == true ) {
+												mistakeMsg += "Firstname was not of an acceptable input value. <br />";
+											}
+											if ( instructions.includes(1) == true ) {
+												mistakeMsg += "Lastname was not of an acceptable input value. <br />";
+											}
+											if ( instructions.includes(2) == true ) {
+												mistakeMsg += "You did not choose at least one employee roll. <br />";
+											}																				
+											mistakeMsg += "</p>";
+											FeedBack.innerHTML = mistakeMsg;																																							
+										} else {
+											if(instructions.includes(6)) {
+												var mistakeMsg = "<p class = \"warning\"> The employee was not submitted. <br />";
+												mistakeMsg += "There is already an employee with that firstname and lastname.";
+												mistakeMsg += "</p>";
+												FeedBack.innerHTML = mistakeMsg;		
+											}
+										}
+										
+										if(compError == true) { //// Dont clear form. Display Red div below. Disable submition.
+											var compMsg = "<p class = \"OHNOError\"> Uh Oh! There was a computer problem ! Don't use until admin has fixed it. </p>";
+											FeedBack.innerHTML = compMsg;
+											Submitdisable = true;
+											document.getElementById("CreateEmpButton").disabled = true;									
+										}								
+									}
+								}
+							}
+						};
+						http.open('POST', destination, true);							
+						http.setRequestHeader('jsonInput', jsonItem);
+						http.send();		
+					} catch (e) {
+						console.log("xmlhttprequest error: "+e);
+					}
+					pass = true;					
+				}else{
+					pass = false;
+				}
+			} else {
+				pass = false;
+				alert(" Make sure you have filled out firstname, lastname and chosen at least employee role. " );
+			}			
+		}
+				
+		return pass;
+	}///End func ValidateEmployeeForm.
+	
+
+</script>
+</html>

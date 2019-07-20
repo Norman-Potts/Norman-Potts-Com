@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href = "<%- route %>css/Global_Styles.css" rel="stylesheet" type="text/css"/>
+	<link href = "<%- route %>css/Editor_Styles.css" rel="stylesheet" type="text/css"/>
+	<link href = "<%- route %>css/Menu_Styles.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>			 
+	<div id = "EditorAppContainer">
+	
+	<h1> Editor Menu </h1> 	
+		<nav id = "NavColumn"> <h2>Manage Shifts</h2>
+			<a href = "<%- route %>Editor/ManageSchedule"><li class = "myNavLinks">Manage the Schedule </li></a>								
+		</nav>											
+		<nav id = "NavColumn"> <h2>Manage Employees</h2>
+			<a href = "<%- route %>Editor/CreateNewEmployee"><li class = "myNavLinks" >Create a new employee    </li></a>					
+			<a href = "<%- route %>Editor/UpdateEmployee"><li class = "myNavLinks" >Update Employee    </li></a>
+			<a href = "<%- route %>Editor/DeleteEmployee"><li class = "myNavLinks">Delete employee    </li></a>
+			<a href = "<%- route %>Editor/EmployeeAvailability"><li class = "myNavLinks" >Change Availability    </li></a>
+		</nav>		
+		<nav id = "NavColumn">
+			<p> Logged in as: <%- Firstname %> <%- Lastname %>. </P>
+			<a href ="<%- route %>Logout/"><button class = "myNavLinks" >Logout</button></a>
+		</nav>	
+	 </div>	 
+</body>
+</html>

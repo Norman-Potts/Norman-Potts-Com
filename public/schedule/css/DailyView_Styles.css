@@ -1,0 +1,20 @@
+/* All styles for the daily view app, Not the schedule display itself*/
+body { background-color: rgb(63,72,204); /*background-color: rgb(153,217,234);*/	 color: black; font-family: "Arial", "Helvetica", "Comic Sans MS", "Comic Sans"; text-align: center; }
+/*	Start of The Schedule Page Styles 	*/	
+#SchedulePage { padding-bottom: 2em; display: block;	max-width: 95vw; background-color: rgb(153,217,234);	border: 5px solid black; border-radius: 3em;	text-align: center; }		
+#scheduleHint p { margin: 0;}	
+#SchedulePageUpperRow {  margin: 0;  padding: 0;  overflow: hidden; display: block;  }	
+#GoToToday	{  font-size: 1rem;  display: block;  margin: 0;  position: absolute;  left: 10%;  cursor: pointer;  cursor: hand;  }	
+#SelectDate { width: 30%; margin: 0; overflow: hidden; position: relative; left: 25%; }	
+#SelectScheduleDate { margin: 0; padding: 0; text-align: center;  }	
+#SchedulePageBottomRow { margin: 0; padding: 0%; overflow: hidden; display: block; float: bottom; text-align: center; }			
+#GoBackADay { font-size: 1rem; display: inline-block; float: bottom; margin: 0; cursor: pointer; cursor: hand; }	
+#GoBackADay img { display: block; float: left; cursor: pointer; cursor: hand; }	
+#GoBackADay p { display: block; float: left; color: blue; text-decoration: none; }						
+#GoForwardADay { font-size: 1rem; margin: 0; display: inline-block; float: bottom; cursor: pointer; cursor: hand; }
+#GoForwardADay p { display: block; float: left; color: blue; text-decoration: none;	 }	
+#GoForwardADay img { display: block; float: left; cursor: pointer; cursor: hand; }	
+#DateBox { margin-left: 1em; margin-right: 1em; border: 3px solid black; background: rgb(195,195,195);	 color: black;  margin: 0%; padding-right: 1em; padding-left: 1em; text-align: center; font-size: 1.5em; display: inline-block; float: bottom; }
+#DateBox p { padding: 0.5em 0.5em 0.5em 0.5em; margin: 0; 	}	
+/*	End The Schedule Page Styles 	*/
+

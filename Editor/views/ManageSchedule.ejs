@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="<%- route %>react/react.js"></script>
+<script src="<%- route %>react/react-dom.js"></script>
+<script src="<%- route %>react/bable.js"></script>
+ 
+
+<link href ="<%- route %>css/Global_Styles.css" rel="stylesheet" type="text/css"/> 		
+<link href ="<%- route %>css/Editor_Styles.css" rel="stylesheet" type="text/css"/>
+<link href ="<%- route %>css/ManageSchedule_Styles.css" rel="stylesheet" type="text/css"/> 		
+<link href ="<%- route %>css/DisplaySchedule_Styles.css" rel="stylesheet" type="text/css"/> 	
+	
+<script type = "text/babel" src="<%- route %>js/ManageTheSchedule.js"> </script> 
+<script type = "text/babel">					
+
+	var ParA  = "<%- assetUrl %>";	/// Asset URL	
+	var ParB  = "<%- route %>Editor/";  ////Root url
+	var ParC  = "<%- displayDate %>"; //// displayDate
+	var ParD  = "<%- YYYYMMDD %>";  //// yyymmdd
+	var ParE  = [];
+	var ParF  = [];
+	try {
+		ParE  = JSON.parse(  '<%- TODAYS_SCHEDULE_ARRAY %>' ); //// TodaysScheduleArray
+		ParF  = JSON.parse( '<%- DEFAULT_EMPLOYEE_ARR %>');
+
+	}catch(e)
+	{ alert("Schedule and Employee data could not be initialized."); }
+	///console.log("LIT");
+	///console.log("ParF "+JSON.stringify( ParF ));	
+	/// Can put in try catch error handling here for when page doesnt have correct inital loading values. 	
+	RunJS(  ParA, ParB, ParC, ParD, ParE, ParF );	
+</script>
+</head>
+<body>			
+	<div id = "EditorAppContainer">				
+		<div id = "TopBlock">			
+			<div id = "BlockLeft">
+				<a href ="<%- route %>Editor/"><button class = "myNavLinks" >Menu</button></a>
+			</div>
+			<h1> Manage Schedule </h1> 	
+			<div id = "BlockLeft">
+				<p> Logged in as: <%- Firstname %> <%- Lastname %>. </p>
+				<a href ="<%- route %>Logout/"><button class = "myNavLinks" >Logout</button></a>
+			</div>
+		</div>
+		<div id ="ManageSchedule">
+		<!--React app goes here -->
+		</div>			
+	</div>	 
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="<%- route %>react/react.js"></script>
+<script src="<%- route %>react/react-dom.js"></script>
+<script src="<%- route %>react/bable.js"></script>
+ 
+
+<link href="<%- route %>css/Global_Styles.css" rel="stylesheet" type="text/css"/> 		
+<link href ="<%- route %>css/Editor_Styles.css" rel="stylesheet" type="text/css"/>
+<link href ="<%- route %>css/DeleteEmployee_Styles.css" rel="stylesheet" type="text/css"/> 		
+
+<script type = "text/babel" src="<%- route %>js/DeleteEmployee.js"> </script> 
+<script type = "text/babel">					
+	var BASE_URL  = "<%- route %>";	
+
+	var EMPLOYEE_ARR  = JSON.parse( '<%- DEFAULT_EMPLOYEE_ARR %>');
+	
+	RunJS(  BASE_URL, EMPLOYEE_ARR );	
+	
+	/// Can put in try catch error handling here for when page doesnt have correct inital loading values. 	
+</script>
+</head>
+<body>			 
+	<div id = "EditorAppContainer">
+		<div id = "TopBlock">			
+			<div id = "BlockLeft">
+				<a href ="<%- route %>Editor/"><button class = "myNavLinks" >Menu</button></a>
+			</div>
+			<h1> Delete Employee </h1> 	
+			<div id = "BlockLeft">
+				<p> Logged in as: <%- Firstname %> <%- Lastname %>. </p>
+				<a href ="<%- route %>Logout/"><button class = "myNavLinks" >Logout</button></a>
+			</div>
+		</div>
+		<div id ="DeleteApp">
+		</div>
+	</div>
+</body>
+</html>

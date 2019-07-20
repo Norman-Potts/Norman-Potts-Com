@@ -1,0 +1,221 @@
+ 
+ 
+#mytable {
+	width: 80vw;
+	position:relative;
+}
+.ColOne,  .ColTwo   {
+	
+	text-align: left;
+	border-right: 1px solid grey;
+	border-left: 1px solid grey;
+	display: inline-block;
+	width: 25%;
+	padding-bottom: 0.2em;
+	padding-top: 0.2em;
+	padding-left: 0.2em;
+	float:left;
+	
+}
+#myheader {
+	border: 1px solid grey;
+	display: block;	 	
+	clear: both;
+	overflow: hidden;
+	white-space: nowrap;
+	text-align: left;
+	background: rgb(190, 190, 190);
+	height: 1.5em;
+}
+.row {
+	border: 1px solid grey;	
+	display: block;
+	cursor: pointer;
+	clear: both;
+	overflow: hidden;
+	white-space: nowrap;
+	text-align: left;
+	margin-top:0.5em;margin-bottom:0.5em;
+	
+}
+.thid {	
+	border-right: 1px solid grey;
+	display: inline-block;
+	float:left;
+	min-width: 3em; 
+	padding-left: 1em;
+	height: 100%;
+
+	
+}
+.certTh {
+	border-right: 1px solid grey;
+	border-left: 1px solid grey;
+	display: inline-block;
+	 
+	font-size: 75%;
+	width: 10%;
+	overflow: hidden;
+	height: 100%;
+	padding-bottom: 0.2rem;
+	padding-top: 0.2rem;
+	padding-left: 0.2rem;
+}
+ 
+.idColumn {
+	border-right: 1px solid grey;
+	min-width: 3em;
+	display: inline-block;
+	 
+	padding-left: 1em;
+	padding-bottom: 0.2em;
+	padding-top: 0.2em;
+	height: 100%;
+	
+}
+.FirstNameTD, .LastNameTD{
+	text-align: left;
+	border-right: 1px solid grey;
+	border-left: 1px solid grey;
+	display: inline-block;
+ 
+	width: 25%;
+	padding-bottom: 0.2em;
+	padding-top: 0.2em;
+	padding-left: 0.2em;
+	height: 100%;
+	 
+}
+.certColumn {
+	display: inline-block;
+	 
+	width: 10%;
+	border-right: 1px solid grey;
+	border-left: 1px solid grey;
+	padding-bottom: 0.2rem;
+	padding-top: 0.2rem;
+	padding-left: 0.2rem;
+	height: 100%;
+ 
+}
+
+
+.row:hover {
+	background: rgb(190, 190, 190);
+	cursor: pointer;
+	
+}
+.row:active {
+	background: rgb(230, 230, 230);
+	cursor: pointer;
+	
+}
+#capt {
+	background: rgb(190, 190, 190);
+	font-weight: bold;
+	border-top: 1px solid grey;
+	border-right:  1px solid grey;
+	border-left:  1px solid grey;
+}
+
+
+
+.IDFormGroup {
+	font-weight: bold;
+	border: 1px solid grey;
+	background: rgb(190,190,190);
+	display: block;
+	float:left;
+	margin-bottom: 1em;
+	
+}
+#SortBtn {
+	
+		
+	
+}
+.FirstnameFormGroup {
+	font-weight: bold;
+	border: 1px solid grey;
+	background: rgb(190,190,190);
+	display: block;
+	float:left;
+	clear: both;
+}
+
+.LastnameFormGroup {
+	margin-left: 2em;
+	font-weight: bold;
+	border: 1px solid grey;
+	background: rgb(190,190,190);
+	display: block;
+	float:left;
+}
+#UpdateForm {
+	margin-top: 2em;
+	text-align: left;
+	
+}
+
+#CertSelectorGroup { display: block; text-align: left; float: left; clear: both;}	
+#CertSelectorGroup h4 {
+	
+}
+#CertSelectorGroup button { border: 2px solid black; border-radius: 5px; margin: 0.3em; padding-left: 0.7em; padding-right: 0.7em; padding-top: 0.3em; padding-bottom: 0.2em; display: inline-block; }
+#CertSelectorGroup button:hover {
+	cursor: pointer;
+	font-weight: bold;
+	
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);	
+}
+#CertSelectorGroup button:focus, #CertSelectorGroup button:active  {
+	cursor: pointer;
+	font-weight: bold;
+		
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);	
+}
+
+#Changebtn {
+ display: block; text-align: left; float: left; clear: both;
+ margin: 3em;
+ cursor: pointer;
+}
+
+#SelectedEmployee {
+	display: block;
+	font-size: 1rem;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	margin-left: 0;
+	margin-right: 0;
+	 
+}
+
+.rowSelected {
+	border: 3px solid black;
+	background: rgb(100, 100, 100);;
+}
+
+#ClearForm {
+	float: right;
+}
+
+.btnDisabled { 
+	
+
+}
+
+#tableUpper {
+	display: block;
+	overflow:hidden;
+	
+	margin: 0;
+}
+#tablelower {
+	display: block;
+	overflow-x:hidden;
+	overflow-y:scroll;
+	height: 20vh;
+	background: white;	
+	border: 2px solid grey;
+}

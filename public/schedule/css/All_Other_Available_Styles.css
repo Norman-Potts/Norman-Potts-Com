@@ -1,0 +1,38 @@
+/* Collect of styles that have been used in past. Must be sorted into there correct 
+style sheets until empty then delete it.
+*/	
+/** DROP FROM OLD */
+/* Sub Slip form styles */
+#SubSlipForm { background-color: rgb(195,195,195); border: 3px solid black; display: block; margin: 1em; text-align: center; padding-bottom: 2em; }	
+#SubSlipForm h2 { border-bottom: 3px solid black; background: white; padding: 0 0 0 1em; margin: 0; text-align: left; }		
+#GoToDate { cursor: pointer; cursor: hand; }	
+.green { background: Green; }
+#SelectShift { display: block; float: right; margin: 0.2em; cursor: pointer; cursor: hand; }
+.NoShiftOption { 	background: grey; color: red; }
+#SubSlipSelectDate { 	 display: inline-block;	 margin-right: 2em;	 }
+#SelectShiftsDiv { display: block; }
+#ShiftsOnDateSelect { min-height: 4em; max-height: 20em; margin-left: 2em; margin-right: 2em; background: white; border: 3px solid black; overflow-x: scroll; overflow-y: hidden; white-space: nowrap; }	
+#SubSlipFormSecondStep textarea { resize: none; }
+#ShiftCell { border: 3px solid black; color: black; margin: 1em; border-radius: 40px; padding: 1em; display: inline-block; }	
+#HandInSubslip { margin: 0.2em;	 }
+#HandInSubslipSubmit { font-size:1.5rem; cursor: pointer; cursor: hand; }	
+#HandInSubslipSubmit:hover, #HandInSubslipSubmit:focus { font-weight: bold; text-decoration: none; background: rgb(166,166,166); cursor: pointer; cursor: hand;  }	
+
+.InnerCellText { border: 1px solid black; overflow: hidden; text-align: left; border-radius: 15px; padding-left: 1em; padding-right: 1em; background: white; }
+
+.SELECTEDInnerCellText { border: 3px solid black; overflow: hidden;	text-align: left; border-radius: 15px; padding-left: 1em; padding-right: 1em;  background: grey; }
+/*End of SubSlip Form styles*/
+#ShiftsUpForGrabs {	border: 3px solid black; background: white; padding: 0;  margin: 0 0 4em 0; }
+#ShiftsUpForGrabs h3 { padding: 0 0 0 1em; margin: 0; border-bottom: 3px solid black; background: rgb(195, 195, 195); text-align: left; }	
+#SubSlipCell #SshiftDate, #SshiftTime, #SshiftName { margin-right: 2em; }
+#TakeShiftButton { display: block; float: right; margin: 0.2em; cursor: pointer; cursor: hand; }	
+#SubSlipCell { border: 3px solid black; color: black; margin: 1em; border-radius: 40px; padding: 1em; display: inline-block; }
+#NoEmployeesInnerShiftsUpForGrabs { overflow-x: scroll; overflow-y: hidden; white-space: nowrap; max-height: 70vh; min-height: 10em; }	
+#InnerShiftsUpForGrabs { overflow-x: scroll; overflow-y: hidden; white-space: nowrap; max-height: 70vh; min-height: 10em; }
+/*End of Home Page styles*/
+
+
+
+
+
+
